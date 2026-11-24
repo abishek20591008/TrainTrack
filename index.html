@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Live Finnish train departures and arrivals powered by the Digitraffic railway API.">
+  <title>TrainTrack | Finnish Train Timetables</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="TrainTrack home">
+      <span class="brand-mark" aria-hidden="true">T</span>
+      <span>traintrack<span class="brand-dot">.</span></span>
+    </a>
+    <span class="header-note"><span class="live-dot"></span> FINNISH RAIL NETWORK</span>
+  </header>
+
+  <main class="page-shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">YOUR JOURNEY STARTS HERE</p>
+        <h1>Every train.<br><span>One timetable.</span></h1>
+        <p class="hero-description">Find upcoming departures and arrivals at railway stations across Finland, using live timetable data from Fintraffic.</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="hero-train">🚆</div>
+        <span class="art-label">FINLAND · RAIL</span>
+      </div>
+    </section>
+
+    <section class="search-panel" aria-labelledby="search-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">STATION LOOKUP</p>
+          <h2 id="search-title">Where are you going?</h2>
+        </div>
+        <span class="data-source">LIVE API DATA</span>
+      </div>
+      <div class="search-controls">
+        <label class="field-group" for="station-search">
+          <span class="field-label">Find a station</span>
+          <input id="station-search" type="search" placeholder="Search by station name..." autocomplete="off">
+        </label>
+        <label class="field-group station-select-group" for="station-select">
+          <span class="field-label">Choose station</span>
+          <select id="station-select" disabled>
+            <option value="">Loading stations...</option>
+          </select>
+        </label>
+        <button id="refresh-button" class="refresh-button" type="button" disabled>
+          <span aria-hidden="true">↻</span> Refresh
+        </button>
+      </div>
+      <p id="station-hint" class="helper-text">Loading the Finnish railway station list…</p>
+    </section>
+
+    <section class="results-section" aria-labelledby="results-title">
+      <div class="results-heading">
+        <div>
+          <p class="eyebrow">STATION BOARD</p>
+          <h2 id="results-title">Departures &amp; arrivals</h2>
+        </div>
+        <div class="updated-label"><span class="live-dot"></span><span id="updated-time">Waiting for station</span></div>
+      </div>
+
+      <div class="station-summary">
+        <div class="station-icon" aria-hidden="true">⌁</div>
+        <div>
+          <p class="summary-caption">SELECTED STATION</p>
+          <h3 id="selected-station">Choose a station</h3>
+          <p id="station-code" class="station-code">Finnish railway network</p>
+        </div>
+      </div>
+
+      <div id="status-message" class="status-message" role="status" aria-live="polite">
+        Choose a station above to load its timetable.
+      </div>
+
+      <div class="timetable-grid">
+        <section class="timetable-card" aria-labelledby="departures-title">
+          <div class="card-heading">
+            <div class="direction-icon departure-icon" aria-hidden="true">↗</div>
+            <div><h3 id="departures-title">Departures</h3><p>Trains leaving this station</p></div>
+            <span id="departure-count" class="count-pill">0</span>
+          </div>
+          <div id="departures-list" class="train-list">
+            <p class="empty-state">Your departures will appear here.</p>
+          </div>
+        </section>
+
+        <section class="timetable-card" aria-labelledby="arrivals-title">
+          <div class="card-heading">
+            <div class="direction-icon arrival-icon" aria-hidden="true">↙</div>
+            <div><h3 id="arrivals-title">Arrivals</h3><p>Trains arriving at this station</p></div>
+            <span id="arrival-count" class="count-pill">0</span>
+          </div>
+          <div id="arrivals-list" class="train-list">
+            <p class="empty-state">Your arrivals will appear here.</p>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="info-strip">
+      <div class="info-symbol" aria-hidden="true">i</div>
+      <p><strong>About this data</strong> Timetable information is provided by Fintraffic's Digitraffic railway API. Actual times and delays appear when reported by the railway system. Always check station announcements for the latest travel information.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>TRAINTRACK <span class="brand-dot">.</span></span>
+    <span>Data: Fintraffic / Digitraffic · CC BY 4.0</span>
+  </footer>
+</body>
+</html>
