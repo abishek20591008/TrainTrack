@@ -8,7 +8,7 @@ A responsive train timetable web application that retrieves live railway timetab
 
 **GitHub Repository:** https://github.com/abishek20591008/TrainTrack
 - **GitHub repository: https://github.com/abishek20591008/TrainTrack.git
-- **Presentation video (minimum 5 minutes):** Add your shareable video URL here.
+- **Presentation video (minimum 5 minutes):
 
 ## Project plan
 
