@@ -4,7 +4,8 @@ A responsive train timetable web application that retrieves live railway timetab
 
 ## Published application
 
-- **Live application (Netlify):** Add your Netlify URL here after deployment.
+- **Live application (Netlify): **Live Application:** https://traintrack-iswr.netlify.app
+**GitHub Repository:** https://github.com/abishek20591008/TrainTrack
 - **GitHub repository:** Add your repository URL here.
 - **Presentation video (minimum 5 minutes):** Add your shareable video URL here.
 
